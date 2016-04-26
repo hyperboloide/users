@@ -1,8 +1,0 @@
-hash: 57b9cb1730bf5ccf69cb59ed7f3492aa854a1a4bbff369f5e2adfd1846930a1a
-updated: 2016-04-26T00:45:20.577616212+02:00
-imports:
-- name: golang.org/x/crypto
-  version: e84a34b1eedf81a90fb4f502d02d64ad365ef937
-  subpackages:
-  - bcrypt
-devImports: []

@@ -25,7 +25,7 @@ var (
 
 func init() {
 	CurrentVersion = 1
-	CurrentHasher = Bcrypt{14}
+	CurrentHasher = Bcrypt{18}
 	Previous = map[int]Hasher{}
 }
 

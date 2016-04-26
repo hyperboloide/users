@@ -1,0 +1,14 @@
+language: go
+
+install:
+  - go get golang.org/x/crypto
+  - go get github.com/onsi/ginkgo/ginkgo
+  - go get github.com/onsi/gomega
+
+script:
+  - ginkgo -r -race ./password
+
+go:
+  - 1.5
+  - 1.6
+  - tip
