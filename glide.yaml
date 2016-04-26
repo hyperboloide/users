@@ -1,0 +1,5 @@
+package: github.com/hyperboloide/users
+import:
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt
