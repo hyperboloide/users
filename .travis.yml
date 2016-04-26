@@ -1,7 +1,7 @@
 language: go
 
 install:
-  - go get golang.org/x/crypto
+  - go get golang.org/x/crypto/bcrypt
   - go get github.com/onsi/ginkgo/ginkgo
   - go get github.com/onsi/gomega
 
