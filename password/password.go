@@ -44,7 +44,7 @@ func Check(password Password, provided string) (bool, error) {
 		if h, ok := Previous[version]; ok {
 			hasher = h
 		} else {
-			return false, fmt.Errorf("Unknow hasher version '%d'", version)
+			return false, fmt.Errorf("Hasher version '%d' undefined", version)
 		}
 	}
 	if !hasher.Compare(password.Bytes(), provided) {
