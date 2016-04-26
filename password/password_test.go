@@ -15,15 +15,15 @@ type testPassword struct {
 	version int
 }
 
-func (tp *testPassword) Bytes() []byte {
+func (tp *testPassword) PasswordBytes() []byte {
 	return tp.hash
 }
 
-func (tp *testPassword) Version() int {
+func (tp *testPassword) PasswordVersion() int {
 	return tp.version
 }
 
-func (tp *testPassword) Set(h []byte, v int) error {
+func (tp *testPassword) PasswordSet(h []byte, v int) error {
 	tp.hash = h
 	tp.version = v
 	return nil

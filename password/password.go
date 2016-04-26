@@ -31,14 +31,14 @@ func init() {
 
 // Password allows acces to the user's password.
 type Password interface {
-	Bytes() []byte
-	Version() int
-	Set([]byte, int) error
+	PasswordBytes() []byte
+	PasswordVersion() int
+	PasswordSet([]byte, int) error
 }
 
 // Check a Password againts a string.
 func Check(password Password, provided string) (bool, error) {
-	version := password.Version()
+	version := password.PasswordVersion()
 	hasher := CurrentHasher
 	if version != CurrentVersion {
 		if h, ok := Previous[version]; ok {
@@ -47,7 +47,7 @@ func Check(password Password, provided string) (bool, error) {
 			return false, fmt.Errorf("Hasher version '%d' undefined", version)
 		}
 	}
-	if !hasher.Compare(password.Bytes(), provided) {
+	if !hasher.Compare(password.PasswordBytes(), provided) {
 		return false, nil
 	} else if version == CurrentVersion {
 		return true, nil
@@ -61,5 +61,5 @@ func Update(password Password, provided string) error {
 	if err != nil {
 		return err
 	}
-	return password.Set(h, CurrentVersion)
+	return password.PasswordSet(h, CurrentVersion)
 }

@@ -2,11 +2,14 @@ language: go
 
 install:
   - go get golang.org/x/crypto/bcrypt
+  - go get github.com/go-gomail/gomail
+  - go get github.com/russross/blackfriday
+  - go get github.com/dchest/uniuri
   - go get github.com/onsi/ginkgo/ginkgo
   - go get github.com/onsi/gomega
 
 script:
-  - ginkgo -r -race ./password
+  - ginkgo -r --race
 
 go:
   - 1.5
